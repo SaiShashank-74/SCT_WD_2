@@ -66,15 +66,15 @@ STOPWATCH/
 
 ## 🌐 Live Demo
 
-GitHub Pages: https://krishna-7781.github.io/SCT_WD_2/
+GitHub Pages: https://saishashank-74.github.io/SCT_WD_2/
 
 ## 📁 Repository
 
-GitHub Repository: https://github.com/Krishna-7781/SCT_WD_2
+GitHub Repository: https://github.com/SaiShashank-74/SCT_WD_2
 
 ## 👨‍💻 Author
 
-**A Sudarsan Krishna**
+**Thatipelli Sai Shashank**
 
 B.Tech CSE Student
 
