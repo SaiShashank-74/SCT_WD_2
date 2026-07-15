@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>"Precision in Every Millisecond"</h2><br>
+        <h1>ST⏱PWATCH</h1>
+        
+
+        <div class="circle-wrapper">
+
+            <svg class="progress-ring" width="320" height="320">
+
+                <circle
+                    class="progress-bg"
+                    cx="160"
+                    cy="160"
+                    r="140">
+                </circle>
+
+                <circle
+                    class="progress"
+                    cx="160"
+                    cy="160"
+                    r="140">
+                </circle>
+
+            </svg>
+
+            <div class="timer-content">
+
+                <div class="display-panel">
+
+                    <div class="time-display">
+                        00:00:00.000
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button id="startBtn">START</button>
+            <button id="pauseBtn">PAUSE</button>
+            <button id="lapBtn">LAP</button>
+            <button id="resetBtn">RESET</button>
+
+        </div>
+
+        <div class="laps-container">
+
+            <h2>LAP TIMES</h2>
+
+            <ul id="laps"></ul>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

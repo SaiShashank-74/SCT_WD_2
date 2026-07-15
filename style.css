@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Share+Tech+Mono&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 15%,
+        rgba(255,140,0,.16),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 85%,
+        rgba(255,80,0,.14),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.03),
+        transparent 50%
+    ),
+
+    linear-gradient(
+        135deg,
+        #07111f,
+        #0d1726,
+        #050b16
+    );
+
+    overflow-x:hidden;
+
+    color:white;
+}
+
+/* Main Container */
+
+.container{
+
+    width:100%;
+    max-width:900px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* Heading */
+
+.container h1{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:3rem;
+
+    letter-spacing:8px;
+
+    color:white;
+
+    margin-bottom:40px;
+
+    text-shadow:
+    0 0 20px rgba(255,140,0,.25);
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Stopwatch */
+
+.circle-wrapper{
+
+    position:relative;
+
+    width:320px;
+    height:320px;
+
+    margin-bottom:35px;
+
+    animation:float 5s ease-in-out infinite;
+}
+
+.progress-ring{
+    transform:rotate(-90deg);
+}
+
+.progress-bg{
+
+    fill:none;
+
+    stroke:rgba(255,255,255,.08);
+
+    stroke-width:12;
+}
+
+.progress{
+
+    fill:none;
+
+    stroke:#ff9800;
+
+    stroke-width:14;
+
+    stroke-linecap:round;
+
+    filter:
+    drop-shadow(0 0 10px #ff9800)
+    drop-shadow(0 0 20px #ff9800)
+    drop-shadow(0 0 35px rgba(255,152,0,.8));
+
+    stroke-dasharray:879.6;
+    stroke-dashoffset:879.6;
+
+    transition:.08s linear;
+}
+
+/* Glass Circle */
+
+.timer-content{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:240px;
+    height:240px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 50px rgba(255,140,0,.08),
+    inset 0 0 30px rgba(255,255,255,.04);
+}
+
+/* Display */
+
+.display-panel{
+
+    background:
+    rgba(0,0,0,.25);
+
+    backdrop-filter:blur(10px);
+
+    padding:18px 24px;
+
+    border-radius:14px;
+
+    border:
+    1px solid rgba(255,140,0,.12);
+}
+
+.time-display{
+
+    font-family:'Share Tech Mono',monospace;
+
+    font-size:1.65rem;
+
+    color:#ffb347;
+
+    white-space:nowrap;
+
+    font-variant-numeric:tabular-nums;
+
+    text-shadow:
+    0 0 8px rgba(255,180,71,.35);
+}
+
+/* Buttons */
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin-bottom:40px;
+}
+
+button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+    transition:.3s;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+}
+
+button:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.05);
+
+    box-shadow:
+    0 15px 30px rgba(255,140,0,.25);
+}
+
+#startBtn{
+    background:#ff9800;
+    color:white;
+}
+
+#pauseBtn{
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid #ff9800;
+
+    color:#ff9800;
+}
+
+#lapBtn{
+
+    background:white;
+    color:#111;
+}
+
+#resetBtn{
+
+    background:#ef4444;
+    color:white;
+}
+
+/* Lap Times */
+
+.laps-container{
+
+    width:450px;
+    max-width:100%;
+
+    text-align:center;
+}
+
+.laps-container h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#ff9800;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+#laps{
+
+    list-style:none;
+
+    max-height:250px;
+
+    overflow-y:auto;
+
+    padding-right:6px;
+}
+
+#laps li{
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    border-left:
+    4px solid #ff9800;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    font-family:'Share Tech Mono',monospace;
+}
+
+#laps::-webkit-scrollbar{
+    width:6px;
+}
+
+#laps::-webkit-scrollbar-thumb{
+
+    background:#ff9800;
+
+    border-radius:10px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .container h1{
+
+        font-size:2rem;
+        letter-spacing:4px;
+    }
+
+    .circle-wrapper{
+
+        width:280px;
+        height:280px;
+    }
+
+    .timer-content{
+
+        width:210px;
+        height:210px;
+    }
+
+    .time-display{
+
+        font-size:1.2rem;
+    }
+
+    .buttons{
+
+        flex-direction:column;
+        align-items:center;
+    }
+
+    button{
+
+        width:220px;
+    }
+}
